@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="./materialize/css/materialize.min.css" media="screen,projection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./AllStationData.js"></script>
+    <script src="./NagoyaSubway.js"></script>
+    <script src="./HigashiyamaLine.js"></script>
+    <script src="./TsurumaiLine.js"></script>
+    <script src="./MeijoLine.js"></script>
+    <script src="./MeijoLineLoop.js"></script>
+    <script src="./MeikoLine.js"></script>
+    <script src="./SakuradoriLine.js"></script>
+    <script src="./kamiiidaLine.js"></script>
+    <script src="./AllSationData.js"></script>
+    <script src="./Multichangestation.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./materialize/js/materialize.min.js"></script>
+    <script src="./index_min.js"></script>
+    <style>
+
+    </style>
+</head>
+<body bgcolor="#f5f5f5">
+
+    <center>
+
+    <!--
+      ここから本体を記述
+      -->
+
+    <!--ヘッダー部分-->
+
+    <div class="card-panel" style="text-align:center;background-color:#28ad8d">
+        <span class="white-text"style="text-align:center;font-size:large">なごや健康のりかえ</span>
+        <a href="#"><i class="small material-icons left" style="color:#28ad8d">replay</i></a>
+        <a href="#" onclick=location.reload()><i class="small material-icons right" style="color:white">replay</i></a>
+    </div>
+    <!--出発駅選択部分開始-->
+    <div class="row" style="text-align:center;width:90%">
+        <div class="card white z-depth-1">
+          <div class="card-content black-text">
+            <span class="card-title black-text">乗車駅を選択</span>
+
+            <p>
+
+                <div id="zyosya_station">
+
+                    <a class="modal-trigger btn-floating amber darken-1 waves-effect center-align" href="#Hmodal" >東山</a>
+                    <div id="Hmodal" class="modal">
+                        <script>
+                            for (var i = 0; i < HigashiyamaLine.length; i++) {
+                                document.write('<a href="#!" onClick=zyousya_line_decision(' + HigashiyamaLine[i]["station_cd"] + ')><div class="btn amber darken-1 waves-effect modal-action modal-close" style="width:70%;border-radius:20px">' + HigashiyamaLine[i]["station_name"] + '</div></a><br><br> ');
+                            }
+                        </script>
+                    </div>
+                    <a class="modal-trigger btn-floating deep-purple lighten-1 waves-effect center-align" href="#Mjmodal" >名城</a>
+                    <div id="Mjmodal" class="modal">
+                        <script>
+                            for (var i = 0; i < MeijoLine.length; i++) {
+                                document.write('<a href="#!" onClick=zyousya_line_decision(' + MeijoLine[i]["station_cd"] + ')><div class="btn deep-purple lighten-1 waves-effect modal-action modal-close" style="width:70%;border-radius:20px">' + MeijoLine[i]["station_name"] + '</div></a><br><br> ');
+                            }
+                        </script>
+                    </div>
+                    <a class="modal-trigger btn-floating deep-purple accent-2 waves-effect center-align" href="#Mkmodal">名港</a>
+                    <div id="Mkmodal" class="modal">
+                        <div class="modal-content">
+                            <script>
+                                for (var i = 0; i < MeikoLine.length; i++) {
+                                    document.write('<a href="#!" onClick=zyousya_line_decision(' + MeikoLine[i]["station_cd"] + ')><div class="btn deep-purple accent-2 waves-effect modal-action modal-close" style="width:70%;border-radius:20px">' + MeikoLine[i]["station_name"] + '</div></a><br><br> ');
+                                }
+                            </script>
+                        </div>
+                    </div>
+
+                    <a class="modal-trigger btn-floating light-blue darken-2 waves-effect center-align" href="#Tmodal">鶴舞</a>
+                    <div id="Tmodal" class="modal">
+                        <div class="modal-content">
+                            <script>
+                                for (var i = 0; i < TsurumaiLine.length; i++) {
+                                    document.write('<a href="#!" onClick=zyousya_line_decision(' + TsurumaiLine[i]["station_cd"] + ')><div class="btn light-blue darken-2 waves-effect modal-action modal-close" style="width:70%;border-radius:20px">' + TsurumaiLine[i]["station_name"] + '</div></a><br><br> ');
+                                }
+                            </script>
+                        </div>
+                    </div>
+                    <a class="modal-trigger btn-floating red darken-2 waves-effect center-align" href="#Smodal">桜通</a>
+                    <div id="Smodal" class="modal">
+                        <div class="modal-content">
+                            <script>
+                                for (var i = 0; i < SakuradoriLine.length; i++) {
+                                    document.write('<a href="#!" onClick=zyousya_line_decision(' + SakuradoriLine[i]["station_cd"] + ')><div class="btn red darken-2 waves-effect modal-action modal-close" style="width:70%;border-radius:20px">' + SakuradoriLine[i]["station_name"] + '</div></a><br><br> ');
+                                }
+                            </script>
+                        </div>
+                    </div>
+                    <a class="modal-trigger btn-floating pink darken-1 waves-effect center-align" href="#Kmodal">上飯田</a>
+                    <div id="Kmodal" class="modal">
+                        <div class="modal-content">
+                            <script>
+                                for (var i = 0; i < KamiiidaLine.length; i++) {
+                                    document.write('<a href="#!" onClick=zyousya_line_decision(' + KamiiidaLine[i]["station_cd"] + ')><div class="btn pink darken-1 waves-effect modal-action modal-close" style="width:70%;border-radius:20px">' + KamiiidaLine[i]["station_name"] + '</div></a><br><br> ');
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div id="zyousya_result"></div>
+
+            </p>
+
+            </div>
+        </div>
+    </div>
+    <!--出発駅選択部分終了-->
+    <!--乗換駅１選択部分開始-->
+<div id="change">
+    <div class="row" style="text-align:center;width:90%">
+        <div class="card transparent z-depth-0">
+          <div class="card-content black-text">
+            <span class="card-title black-text">乗換駅を選択</span>
+            <p>
+                <div id="norikae1_position">
+                <a class="modal-trigger btn transparent z-depth-0 waves-effect" href="#Norikae1_modal" style="color:#8ed1bc;;width:60%"><i class="material-icons left">add</i>追加変更</a>
+                <div id="Norikae1_modal" class="modal">
+                    <div class="modal-content">
+                        <div id="norikae1_list">
+                            <a class="btn black">乗車駅を選択してください</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div id="norikae1_result"></div>
+                <!--乗換駅1選択部分終了-->
+                <!--乗換駅2選択部分開始-->
+                <div id="norikae2_position">
+                    <a class="modal-trigger btn transparent z-depth-0 waves-effect" href="#Norikae2_modal" style="color:#8ed1bc;width:60%"><i class="material-icons left">add</i>追加変更</a>
+                    <div id="Norikae2_modal" class="modal">
+                        <div class="modal-content">
+                            <div id="norikae2_list">
+                                <a class="btn black">乗車駅を選択してください</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="norikae2_result"></div>
+            </p>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--乗換駅2選択部分終了-->
+    <!--到着駅選択部分開始-->
+    <div id="a_result">
+    <div class="row" style="text-align:center;width:90%">
+        <div class="card white z-depth-1">
+          <div class="card-content black-text">
+            <span class="card-title black-text">下車駅を選択</span>
+
+            <p>
+                <a class="modal-trigger btn transparent z-depth-0 waves-effect" onClick=arrive_list_add() href="#arrive_modal" style="color:#8ed1bc;width:60%"><i class="material-icons left">add</i>追加変更</a>
+                <div id="arrive_modal" class="modal">
+                    <div class="modal-content">
+                        <div id="arrive_list">
+                            先に乗車駅を選択してください
+                        </div>
+                    </div>
+                </div>
+                <div id="arrive_result"></div>
+            </p>
+            <br>
+            </div>
+        </div>
+    </div>
+  </div>
+    <!--到着駅選択部分終了-->
+    <!--送信部分開始-->
+    <a class="btn waves-effect" onClick=health_send() style="width:90%;border-radius:20px;background-color:#28ad8d;">歩けるルートを検索する</a>
+    <!--送信部分終了-->
+    <br><br><br><br><br><br><br><br>
+</center>
+</body>
+</html>

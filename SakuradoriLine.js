@@ -1,4 +1,4 @@
-var SakuradoriLine = 
+var SakuradoriLine =
 [{"station_cd":9951701,"station_g_cd":9951701,"station_name":"中村区役所","line_cd":99517,"pref_cd":23,"post":"453-0811","add":"名古屋市中村区太閤通３-２７-３","lon":136.873126,"lat":35.167611},
 {"station_cd":9951702,"station_g_cd":1141101,"station_name":"名古屋","line_cd":99517,"pref_cd":23,"post":"450-0002","add":"名古屋市中村区名駅１丁目４番","lon":136.882546,"lat":35.170761},
 {"station_cd":9951703,"station_g_cd":9951703,"station_name":"国際センター","line_cd":99517,"pref_cd":23,"post":"450-0002","add":"名古屋市中村区名駅４-１３","lon":136.889375,"lat":35.172128},
@@ -19,4 +19,4 @@ var SakuradoriLine =
 {"station_cd":9951718,"station_g_cd":9951718,"station_name":"鳴子北","line_cd":99517,"pref_cd":23,"post":"-","add":"名古屋市天白区相川1丁目1","lon":136.966209,"lat":35.102684},
 {"station_cd":9951719,"station_g_cd":9951719,"station_name":"相生山","line_cd":99517,"pref_cd":23,"post":"-","add":"名古屋市緑区相川3丁目61","lon":136.976208,"lat":35.102545},
 {"station_cd":9951720,"station_g_cd":9951720,"station_name":"神沢","line_cd":99517,"pref_cd":23,"post":"-","add":"名古屋市緑区神沢1丁目303","lon":136.98954,"lat":35.098518},
-{"station_cd":9951721,"station_g_cd":9951721,"station_name":"徳重","line_cd":99517,"pref_cd":23,"post":"-","add":"名古屋市緑区乗鞍2丁目102-1","lon":136.99815,"lat":35.094491}]
+{"station_cd":9951721,"station_g_cd":9951721,"station_name":"徳重","line_cd":99517,"pref_cd":23,"post":"-","add":"名古屋市緑区乗鞍2丁目102-1","lon":136.99815,"lat":35.094491}];
